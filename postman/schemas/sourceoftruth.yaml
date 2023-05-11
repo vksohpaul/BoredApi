@@ -16,4 +16,16 @@ paths:
           description: no activity found           
         500:
           description: Unexpected error
-          
+    
+  /health:
+    get:
+        summary: Get health check
+        responses:
+         '200':
+            description: get a brand new activity to do when you are bored          
+          404:
+            description: no activity found           
+          500:
+            description: Unexpected error
+
+
