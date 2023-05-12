@@ -2,8 +2,7 @@ openapi: '3.0.0'
 info:
   version: '1.0.0'
   title: 'Bored API'
-  description: Bored API
-  /Find an activity for you if you are bored
+  description: "Bored Api: Find an activity for you if you are bored"
 
 paths:
   /activity:    
@@ -12,11 +11,21 @@ paths:
       responses:
         '200':
           description: get a brand new activity to do when you are bored          
-        404:
-          description: no activity found           
         500:
           description: Unexpected error
-    
+
+
+  /activity/{activityId}:
+    get:
+    summary: Find an activity by a given activityId if you are feeling bored
+      responses:
+        '200':
+          description: get a brand new activity to do when you are bored          
+        400:
+          description: No activity found for a given activityId
+        500:
+          description: Unexpected error
+      
   /health:
     get:
         summary: Get health check
