@@ -1,15 +1,15 @@
 openapi: '3.0.0'
-info:
+info:    
   title: 'Bored API'
   version: '1.0.0'
   description: "Bored Api: Find an activity for you if you are bored"
   license: 
     name: Moneris  
   servers:
-      - url: 'https://gnrdev01-29.moneris.com/cardprogram-api'
+      - url: 'https://gnrsvcdev01-29.moneris.com/activity-api'
 
 paths:
-    
+
   /activity:    
     get:
       summary: Find an activity if you are feeling bored
@@ -28,6 +28,16 @@ paths:
         500:
           description: Unexpected error
 
+    /special:
+        get:
+         summary: Find a special activity if you are feeling bored
+        responses:
+            '200':
+            description: get a brand new activity to do when you are bored          
+            content: 
+                application/json:                        
+            500:
+              description: Unexpected error    
 
   /activity/{activityId}:
     get:
